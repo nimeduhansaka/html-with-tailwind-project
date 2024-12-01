@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoWords About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--Import Pre Loader-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hatch.js"></script>
+
+<!--Stylesheet-->
+    <style>
+
+        /*Font*/
+        .text1{
+            font-family: 'Charter', serif;
+        }
+        .text2{
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+        /*For Pre Loader*/
+        #preloader{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+
+        /*For Typing Effect*/
+        @keyframes blink {
+            0% { border-color: transparent; }
+            50% { border-color: #ffffff; }
+            100% { border-color: transparent; }
+        }
+        .typing-text {
+            border-right: 2px solid #ffffff;
+            animation: blink 0.7s infinite;
+            padding-right: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+
+        /*For Ratings Section*/
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.3rem;
+            --stroke: #666;
+            --fill: #ffc73a;
+        }
+
+        .rating input {
+            appearance: unset;
+        }
+
+        .rating label {
+            cursor: pointer;
+        }
+
+        .rating svg {
+            width: 2rem;
+            height: 2rem;
+            overflow: visible;
+            fill: transparent;
+            stroke: var(--stroke);
+            stroke-linejoin: bevel;
+            stroke-dasharray: 12;
+            animation: idle 4s linear infinite;
+            transition: stroke 0.2s, fill 0.5s;
+        }
+
+        @keyframes idle {
+            from {
+                stroke-dashoffset: 24;
+            }
+        }
+
+        .rating label:hover svg {
+            stroke: var(--fill);
+        }
+
+        .rating input:checked ~ label svg {
+            transition: 0s;
+            animation: idle 4s linear infinite, yippee 0.75s backwards;
+            fill: var(--fill);
+            stroke: var(--fill);
+            stroke-opacity: 0;
+            stroke-dasharray: 0;
+            stroke-linejoin: miter;
+            stroke-width: 8px;
+        }
+
+        @keyframes yippee {
+            0% {
+                transform: scale(1);
+                fill: var(--fill);
+                fill-opacity: 0;
+                stroke-opacity: 1;
+                stroke: var(--stroke);
+                stroke-dasharray: 10;
+                stroke-width: 1px;
+                stroke-linejoin: bevel;
+            }
+
+            30% {
+                transform: scale(0);
+                fill: var(--fill);
+                fill-opacity: 0;
+                stroke-opacity: 1;
+                stroke: var(--stroke);
+                stroke-dasharray: 10;
+                stroke-width: 1px;
+                stroke-linejoin: bevel;
+            }
+
+            30.1% {
+                stroke: var(--fill);
+                stroke-dasharray: 0;
+                stroke-linejoin: miter;
+                stroke-width: 8px;
+            }
+
+            60% {
+                transform: scale(1.2);
+                fill: var(--fill);
+            }
+        }
+/*Some CSS style may red underlined and showing like errors in some IDE or Text Editors.*/
+
+/*But that codes are working properly.*/
+
+
+
+
+    </style>
+
+</head>
+<body class="w-full">
+
+<!--Pre Loader-->
+<div id="preloader">
+    <l-hatch
+            size="48"
+            stroke="4"
+            speed="2"
+            color="#ffffff"
+    ></l-hatch>
+</div>
+
+<div id="content">
+
+<!--Main Title section-->
+    <div class="w-full bg-[#000300] flex justify-center pt-10 pb-10">
+<h1 class="text-4xl font-bold text-[#ffffff]">
+    <span id="typing-text" class="typing-text"></span>
+</h1>
+    </div>
+
+
+<!--Details Section-->
+    <div class="w-full mb-6">
+        <h2 class="w-full mt-6 pl-6 float-left flex justify-left text-lg font-medium"> <span class="text-2xl font-bold ">Course Name: </span> <span class="mt-1 pl-3">Foundation of Web Technologies</span> </h2>
+        <h2 class="w-full mt-6 pl-6 float-left flex justify-left text-lg font-medium"> <span class="text-2xl font-bold">Course Code: </span> <span class="mt-1 pl-3">IS1106</span> </h2>
+        <h2 class="w-full mt-6 pl-6 float-left flex justify-left text-lg font-medium"> <span class="text-2xl font-bold">Project Title: </span> <span class="mt-1 pl-3">EchoWords</span> </h2>
+        <h2 class="w-full mt-6 pl-6 float-left flex justify-left text-lg font-medium"> <span class="text-2xl font-bold">Student Name: </span> <span class="mt-1 pl-3">J.P.N.H GUNATHILAKA</span> </h2>
+        <h2 class="w-full mt-6 pl-6 float-left flex justify-left text-lg font-medium"> <span class="text-2xl font-bold">Student ID: </span> <span class="mt-1 pl-3">22FIS0490</span> </h2>
+    </div>
+
+<!--Introduction Section-->
+    <div class="w-full bg-[#ffffff] mb-4">
+    <div class="w-full">
+        <h2 class="w-full float-left flex justify-left text-3xl font-bold mt-6 pl-6 mb-4 pt-4 border-t-2 border-[#000300]">Introduction</h2>
+        <div>
+        <ul class="style-none leading-loose pl-6 pr-2">
+            <li class="text-lg mt-1">&#8594; I created publishing platform frontend.</li>
+            <li class="text-lg mt-1">&#8594; I Used this Project for <b>HTML</b> and <b>Tailwind CSS</b> for design.</li>
+            <li class="text-lg mt-1">&#8594; Running on <b>JavaScript</b> for other functions.</li>
+            <li class="text-lg mt-1">&#8594; This website can use to write, share, and discover articles and stories.</li>
+            <li class="text-lg mt-1">&#8594; Users can know daily News and read various type of topic articles what they interested.</li>
+            <li class="text-lg mt-1">&#8594; There is a creators only they can post community articles but news feed is free any one can read it without login.</li>
+            <li class="text-lg mt-1">&#8594; Anyone can be a creator. only they need to do is login and pay. After that they can read community articles and post article given topics.</li>
+            <li class="text-lg mt-1">&#8594; There is challenges. Only creators can  participate that challenges.</li>
+            <li class="text-lg mt-1">&#8594; To all challenges we give time period and creators should post there article before deadlines.</li>
+            <li class="text-lg mt-1">&#8594; In all challenges we choose only one winner, and we give them to cash prizes.</li>
+            <li class="text-lg mt-1">&#8594; News feed is always updating. but any creator or user can't write on news feed. That's are only writing our developer team.(Trustable sources news only)</li>
+            <li class="text-lg mt-3">&#8594; I followed two website for take this design. <span>Medium</span> and <span>Vocal</span> publishing websites.</li>
+            <li>&#8594; <span class="text-lg font-medium">Medium -</span> <a class="hover:underline" href="https://medium.com/">https://medium.com/</a></li>
+            <li>&#8594; <span class="text-lg font-medium">Vocal -</span> <a class="hover:underline" href="https://vocal.media/">https://vocal.media/</a></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+
+<!--Project Overview Section-->
+    <div class="w-full bg-[#000300] text-[#ffffff] pb-6">
+        <div class="w-full">
+            <h2 class="w-full text-[#ffffff] float-left flex justify-left text-3xl font-bold mt-2 pl-6 mb-4 pt-4 ">Project Overview</h2>
+            <div>
+                <ul class="style-none leading-loose pl-6">
+                    <li class="text-lg mt-2">> I used landing page for <b>index.html</b> - <a class="underline font-medium" href="index.html">click here...</a> </li>
+                    <li class="text-lg mt-1">&#8594; I followed Medium web page Landing page design to create this page.</li>
+                    <li class="text-lg mt-1">&#8594; This page only have Testimonial and page developer opinion.</li>
+
+                    <li class="text-lg mt-5">> I linked Membership in navigation bar to <b>Membership.html</b> - <a class="underline font-medium" href="Membership.html">click here...</a>  </li>
+                    <li class="text-lg mt-1">&#8594; This page design followed by Medium website Membership page.</li>
+                    <li class="text-lg mt-1">&#8594; This page purpose is get user attention for be a creator in website or influence to read articles.</li>
+                    <li class="text-lg mt-1">&#8594; This page has three main link to Read, Write and Become a member.</li>
+
+                    <li class="text-lg mt-5">> After click Start Reading in Membership.html webpage loading <b>articles.html</b> - <a class="underline font-medium" href="articles.html">click here...</a> </li>
+                    <li class="text-lg mt-1">&#8594; Vocal webpage design I followed in here.</li>
+                    <li class="text-lg mt-1">&#8594; This webpage I divided five main sections.</li>
+                    <li class="text-lg mt-1">&#8594; That's are Hot News, Latest Stories, Challenges, Creators, Communities.</li>
+                    <li class="text-lg mt-1">&#8594; This page purpose is all website content showing in here.</li>
+
+                    <li class="text-lg mt-5">> After click index.html in Navigation bar Get Started button loading <b>loginform.html</b> - <a class="underline font-medium" href="loginform.html">click here...</a> </li>
+                    <li class="text-lg mt-1">> If clicked Membership.html page Sign in button, sign up button, Start Writing or Become a Member sections. </li>
+                    <li class="text-lg mt-1">> In articles.html page Become a creator button.</li>
+                    <li class="text-lg mt-1">&#8594; loginform.html has Two Forms one for Login and one for SignUp.</li>
+                    <li class="text-lg mt-1">&#8594; In Login Form if you clicked Sign up for you don't have an account instantly hide Login form and show SignUp Form.</li>
+                    <li class="text-lg mt-1">&#8594; In SignUp Form if you clicked Login for you have an account instantly hide SignUp form and show Login Form.</li>
+
+<!--                    Explore Page-->
+                    <li class="text-lg mt-5">> In footer Explore linked to created <b>explore.html</b> - <a class="underline font-medium" href="explore.html">click here...</a> </li>
+                    <li class="text-lg mt-1">&#8594; In here you can visit any page or any section in Full EchoWords web site.</li>
+                    <li class="text-lg mt-1">&#8594; Given Search bar you can enter page name or section name while you get suggestions in below.</li>
+                    <li class="text-lg mt-1">&#8594; Below Search bar you can see Cards with page names and section names.</li>
+                    <li class="text-lg mt-1">&#8594; What name page you want, You can easily visit after clicked that card.</li>
+
+                    <li class="text-lg mt-5">> In footer Privacy Policy linked to created <b>privacypolicy.html</b> - <a class="underline font-medium" href="Membership.html">click here...</a> </li>
+                    <li class="text-lg mt-1">&#8594; This page purpose is users to get know webpage privacy policies.</li>
+
+                    <li class="text-lg mt-5">> In footer Term of Use linked to <b>term.html</b> - <a class="underline font-medium" href="Membership.html">click here...</a> </li>
+                    <li class="text-lg mt-1">&#8594; This page purpose is users to get know webpage Terms.</li>
+
+                    <li class="text-lg mt-5">> In footer Support linked to <b>support.html</b> - <a class="underline font-medium" href="support.html">click here...</a></li>
+                    <li class="text-lg mt-1">&#8594; This page purpose is answers to all user's all kind of questions about this webpage.</li>
+                    <li class="text-lg mt-1">&#8594; Ask questions for doesn't need to be login to website. You can ask questions anonymously.</li>
+
+                    <li class="text-lg mt-5">> Navigation bar <b>EchoWords</b> logo behaviours:</li>
+                    <li class="text-lg mt-1">&#8594; In <u>index.html</u> page if you clicked EchoWords logo - Page refresh. </li>
+                    <li class="text-lg mt-1">&#8594; In <u>Membership.html</u> page if you clicked EchoWords logo - Go back to <u>index.html</u> page.</li>
+                    <li class="text-lg mt-1">&#8594; In <u>articles.html</u> page if you clicked EchoWords logo - Go back to <u>index.html</u> page.</li>
+                    <li class="text-lg mt-1">&#8594; In <u>about.html</u> page if you clicked EchoWords logo - Go back to <u>index.html</u> page.</li>
+                    <li class="text-lg mt-1">&#8594; In <u>loginform.html</u> page if you clicked EchoWords logo - Go back to <u>index.html</u> page.</li>
+                    <li class="text-lg mt-1">&#8594; Any footer section <u>explore.html, privacypolicy.html, term.html,</u> and <u>support.html</u> pages if you clicked EchoWords logo - Go back to Previous page you visited.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!--Resources Section-->
+    <div class="w-full bg-[#ffffff] mb-4">
+        <div class="w-full">
+            <h2 class="w-full float-left flex justify-left text-3xl font-bold  pl-6 mb-2 pt-4">Resources</h2>
+            <div>
+                <ul class="style-none leading-loose pl-6">
+                    <li class="text-lg mt-1">> Used colors </li>
+                    <div class="w-full flex flex-wrap gap-8 mt-1 bg-white">
+                        <div class="flex flex-wrap justify-between mt-1 bg-white">
+
+                            <div class=" w-1/4 p-2 rounded-xl">
+                                <div class="rounded-xl bg-white">
+                                    <img src="colors/dark000300.png" alt="Card 4" class="border-2 w-full h-300 rounded-2xl p-1">
+                                    <div class="p-4">
+                                        <h2 class="text-sm text-gray-500 font-medium -mt-2 mb-8">#000300 - Black</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" w-1/4 p-2 rounded-xl">
+                                <div class="rounded-xl bg-white">
+                                    <img src="colors/white.png" alt="Card 4" class="border-2 w-full h-300 rounded-2xl p-1">
+                                    <div class="p-4">
+                                        <h2 class="text-sm text-gray-500 font-medium -mt-2 mb-8">#ffffff - white</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" w-1/4 p-2 rounded-xl">
+                                <div class="rounded-xl bg-white">
+                                    <img src="colors/purple.png" alt="Card 4" class="border-2 w-full h-300 rounded-2xl p-1">
+                                    <div class="p-4">
+                                        <h2 class="text-sm text-gray-500 font-medium -mt-2 mb-8">#8f1978 - Purple</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" w-1/4 p-2 rounded-xl">
+                                <div class="rounded-xl bg-white">
+                                    <img src="colors/yellow.png" alt="Card 4" class="border-2 w-full h-300 rounded-2xl p-1">
+                                    <div class="p-4">
+                                        <h2 class="text-sm text-gray-500 font-medium -mt-2 mb-8">#b79d17 - Yellow</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" w-1/4 p-2 rounded-xl -mt-6">
+                                <div class="rounded-xl bg-white">
+                                    <img src="colors/gray.png" alt="Card 4" class="border-2 w-full h-300 rounded-2xl p-1">
+                                    <div class="p-4">
+                                        <h2 class="text-sm text-gray-500 font-medium -mt-2 mb-8">#111827 - Gray</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <li class="text-lg mt-4">> Used Fonts </li>
+                    <li>&#8594; <span class="text1">'Charter', serif</span> - Whole <u>index.html</u> page and all footer sections.</li>
+                    <li>&#8594; <span class="text2">'Roboto', sans-serif</span> - Navigation bar in <u>articles.html</u> page.</li>
+
+                    <li class="text-lg mt-4">> SVGs are used from - <a class="underline" href="https://www.svgrepo.com/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Animations are used from - <a class="underline" href="https://lottiefiles.com/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Images are used from </li>
+                    <li>&#8594; UnSplash - <a class="underline" href="https://unsplash.com/">click here...</a></li>
+                    <li>&#8594; Canva - <a class="underline" href="https://www.canva.com/">click here...</a></li>
+                    <li>&#8594; CNN News - <a class="underline" href="https://edition.cnn.com/">click here...</a></li>
+                    <li>&#8594; Daily Mirror News - <a class="underline" href="https://www.dailymirror.lk/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> News get from </li>
+                    <li>&#8594; CNN News - <a class="underline" href="https://edition.cnn.com/">click here...</a></li>
+                    <li>&#8594; Daily Mirror News - <a class="underline" href="https://www.dailymirror.lk/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Buttons styles are get from - <a class="underline" href="https://uiverse.io/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Support Page Input Field styles get from - <a class="underline" href="https://uiverse.io/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> About Page Rate Me Star styles get from - <a class="underline" href="https://uiverse.io/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Pre Loader style get from - <a class="underline" href="https://uiball.com/">click here...</a></li>
+
+                    <li class="text-lg mt-4">> Explore page Search bar get from - <a class="underline" href="https://v0.dev/">click here...</a>(Need Log in)</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+<!--Rate Section-->
+<!--(Just For Fun)-->
+    <div class="w-full text-center bg-[#000300] pt-4 pb-2">
+        <h2 class="text-[#ffffff] text-xl font-bold">Rate Me!</h2>
+    </div>
+
+    <div class="w-full bg-[#000300] flex justify-center items-center pb-6">
+        <div>
+        <div class="rating w-full">
+            <input type="radio" id="star-1" name="star-radio" value="star-1">
+            <label for="star-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <input type="radio" id="star-2" name="star-radio" value="star-1">
+            <label for="star-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <input type="radio" id="star-3" name="star-radio" value="star-1">
+            <label for="star-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <input type="radio" id="star-4" name="star-radio" value="star-1">
+            <label for="star-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <input type="radio" id="star-5" name="star-radio" value="star-1">
+            <label for="star-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+        </div>
+        </div>
+
+    </div>
+
+
+
+<!--JavaScript-->
+<script>
+
+// For Typing Effect
+    const typingText = document.getElementById('typing-text');
+    const phrases = ['About For', 'EchoWords', 'All Need to Know!'];
+    const typingSpeed = 150; // milliseconds per character
+    const eraseSpeed = 100;
+    const pauseDuration = 1000;
+
+    function typePhrase(phrase, index = 0) {
+        if (index < phrase.length) {
+            typingText.textContent += phrase[index];
+            setTimeout(() => typePhrase(phrase, index + 1), typingSpeed);
+        } else {
+            setTimeout(erasePhrase, pauseDuration);
+        }
+    }
+
+    function erasePhrase() {
+        if (typingText.textContent.length > 0) {
+            typingText.textContent = typingText.textContent.slice(0, -1);
+            setTimeout(erasePhrase, eraseSpeed);
+        } else {
+            setTimeout(nextPhrase, pauseDuration);
+        }
+    }
+
+    let currentPhraseIndex = 0;
+    function nextPhrase() {
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        typePhrase(phrases[currentPhraseIndex]);
+    }
+
+    // Start loop
+    typePhrase(phrases[currentPhraseIndex]);
+
+
+// For Pre Loader
+window.addEventListener('load',function (){
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+
+    // set time
+    setTimeout( function (){
+        preloader.style.display='none';
+        content.style.display='block';
+    },1500);
+});
+
+
+</script>
+
+
+</div>
+</body>
+</html>
